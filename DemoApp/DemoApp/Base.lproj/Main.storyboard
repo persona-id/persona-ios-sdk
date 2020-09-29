@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GQ1-Ct-Rlk">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="LondrinaSolid-Regular.ttf">
+            <string>LondrinaSolid-Regular</string>
+        </array>
+        <array key="Rubik-Regular.ttf">
+            <string>Rubik-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="B9T-rM-RTh">
+            <objects>
+                <navigationController id="GQ1-Ct-Rlk" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0BO-Yh-TBD">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="E6f-ak-44w"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ua8-q1-Ih7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-735" y="121"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="WelcomeViewController" customModule="DemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paws" translatesAutoresizingMaskIntoConstraints="NO" id="cDn-Fb-dqf" userLabel="Logo">
+                                <rect key="frame" x="64" y="76" width="286" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="d57-tU-nQo"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="H2b-y9-J8d" userLabel="Content Stack">
+                                <rect key="frame" x="32" y="305" width="350" height="286.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXS-By-5ah">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="56"/>
+                                        <string key="text">Time to verify your identity!
+Chose your use case:</string>
+                                        <fontDescription key="fontDescription" name="LondrinaSolid-Regular" family="Londrina Solid" pointSize="24"/>
+                                        <color key="textColor" name="primaryLabel"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tgX-mI-imN">
+                                        <rect key="frame" x="0.0" y="88" width="350" height="198.5"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UbC-Nw-Wa8" userLabel="Human Vertical Stack">
+                                                <rect key="frame" x="0.0" y="0.0" width="167" height="198.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpo-ci-LoY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="153"/>
+                                                        <state key="normal" image="human"/>
+                                                        <connections>
+                                                            <action selector="humanButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Gz-ns-yMC"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Human" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HD6-7z-KFo">
+                                                        <rect key="frame" x="0.0" y="161" width="167" height="37.5"/>
+                                                        <fontDescription key="fontDescription" name="LondrinaSolid-Regular" family="Londrina Solid" pointSize="32"/>
+                                                        <color key="textColor" name="secondaryLabel"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CkF-WQ-dup" userLabel="Pawsona Vertical Stack">
+                                                <rect key="frame" x="183" y="0.0" width="167" height="198.5"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0x-KK-m1y">
+                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="153"/>
+                                                        <state key="normal" image="pawsona"/>
+                                                        <connections>
+                                                            <action selector="pawsonaButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KWm-bL-gYJ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pawsona" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ie-lx-6AP">
+                                                        <rect key="frame" x="0.0" y="161" width="167" height="37.5"/>
+                                                        <fontDescription key="fontDescription" name="LondrinaSolid-Regular" family="Londrina Solid" pointSize="32"/>
+                                                        <color key="textColor" name="secondaryLabel"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="C0x-KK-m1y" firstAttribute="width" secondItem="qpo-ci-LoY" secondAttribute="width" id="LS5-cl-QuZ"/>
+                                            <constraint firstItem="C0x-KK-m1y" firstAttribute="height" secondItem="qpo-ci-LoY" secondAttribute="height" id="O5r-Ok-xNe"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hhs-7i-bcJ">
+                                <rect key="frame" x="16" y="778" width="382" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="secondaryLabel"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="kiK-Xh-zJA"/>
+                                </constraints>
+                                <string key="text">Paws is a ficticious app made by the folks at Persona, to showcase the mobile SDK capabilities. 
+Any similarities with real life are purely coincidental.</string>
+                                <color key="textColor" name="secondaryLabel"/>
+                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="xVQ-r7-uou"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstItem="cDn-Fb-dqf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7yM-5v-bE6"/>
+                            <constraint firstItem="Hhs-7i-bcJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2b-y9-J8d" secondAttribute="bottom" constant="16" id="8Ca-u9-nvz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="H2b-y9-J8d" secondAttribute="trailing" constant="32" id="Hat-84-4Lm"/>
+                            <constraint firstItem="cDn-Fb-dqf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="Hge-gc-xLP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hhs-7i-bcJ" secondAttribute="trailing" constant="16" id="J2L-gz-KDl"/>
+                            <constraint firstItem="Hhs-7i-bcJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="16" id="c3X-J5-AOa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cDn-Fb-dqf" secondAttribute="trailing" constant="64" id="cBQ-kK-LMJ"/>
+                            <constraint firstItem="Hhs-7i-bcJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="eXN-mf-BDY"/>
+                            <constraint firstItem="H2b-y9-J8d" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eZT-BK-Hnr"/>
+                            <constraint firstItem="H2b-y9-J8d" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cDn-Fb-dqf" secondAttribute="bottom" constant="64" id="mKi-f6-Vff"/>
+                            <constraint firstItem="cDn-Fb-dqf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="nU6-Gb-TP1"/>
+                            <constraint firstItem="H2b-y9-J8d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="zFb-JG-63o"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="CKF-Ba-eM1"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <outlet property="footerTextView" destination="Hhs-7i-bcJ" id="daI-Eo-Iwx"/>
+                        <outlet property="humanButton" destination="qpo-ci-LoY" id="qW6-nA-eTd"/>
+                        <outlet property="humanLabel" destination="HD6-7z-KFo" id="K55-4a-7xN"/>
+                        <outlet property="logoImageView" destination="cDn-Fb-dqf" id="7JM-gc-4Zb"/>
+                        <outlet property="pawsonaButton" destination="C0x-KK-m1y" id="Yss-wx-bPf"/>
+                        <outlet property="pawsonaLabel" destination="2Ie-lx-6AP" id="brc-MC-JiN"/>
+                        <outlet property="titleLabel" destination="FXS-By-5ah" id="7W5-hP-byt"/>
+                        <segue destination="1FI-AF-Qsw" kind="show" identifier="showInquiry" id="9FD-Xj-BYA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="112" y="121"/>
+        </scene>
+        <!--Inquiry View Controller-->
+        <scene sceneID="YoA-Pq-vQ7">
+            <objects>
+                <viewController id="1FI-AF-Qsw" customClass="InquiryViewController" customModule="DemoApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TEC-3m-0ke">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paws" translatesAutoresizingMaskIntoConstraints="NO" id="zLc-Hz-CSy" userLabel="Logo">
+                                <rect key="frame" x="64" y="76" width="286" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="nsf-db-nRr"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9y-ue-a3o">
+                                <rect key="frame" x="16" y="44" width="88" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="tAC-Hu-sYq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="LondrinaSolid-Regular" family="Londrina Solid" pointSize="32"/>
+                                <state key="normal" title="BACK">
+                                    <color key="titleColor" name="error"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Pbd-Tt-lBE" kind="unwind" unwindAction="unwindToStart:" id="4wA-pN-79y"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="SYI-zx-6sl">
+                                <rect key="frame" x="32" y="274" width="350" height="474"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoK-Cr-8Wu">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="28"/>
+                                        <fontDescription key="fontDescription" name="LondrinaSolid-Regular" family="Londrina Solid" pointSize="24"/>
+                                        <color key="textColor" name="primaryLabel"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeE-04-7K9">
+                                        <rect key="frame" x="0.0" y="92" width="350" height="382"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="textColor" name="secondaryLabel"/>
+                                        <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TR5-3G-bCi">
+                                <rect key="frame" x="16" y="780" width="382" height="100"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" name="secondaryLabel"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="7Pa-Em-WQT"/>
+                                </constraints>
+                                <string key="text">Paws is a ficticious app made by the folks at Persona, to showcase the mobile SDK capabilities. 
+Any similarities with real life are purely coincidental.</string>
+                                <color key="textColor" name="secondaryLabel"/>
+                                <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="1FI-AF-Qsw" id="HMU-cf-4zq"/>
+                                </connections>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstItem="SYI-zx-6sl" firstAttribute="leading" secondItem="fZw-tq-fJF" secondAttribute="leading" constant="32" id="1hk-p6-vnT"/>
+                            <constraint firstItem="fZw-tq-fJF" firstAttribute="trailing" secondItem="SYI-zx-6sl" secondAttribute="trailing" constant="32" id="2hn-cp-5dv"/>
+                            <constraint firstAttribute="bottom" secondItem="TR5-3G-bCi" secondAttribute="bottom" constant="16" id="778-PK-uYE"/>
+                            <constraint firstItem="zLc-Hz-CSy" firstAttribute="top" secondItem="fZw-tq-fJF" secondAttribute="top" constant="32" id="BLM-ST-7fy"/>
+                            <constraint firstItem="zLc-Hz-CSy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fZw-tq-fJF" secondAttribute="leading" constant="64" id="COT-fw-Lp1"/>
+                            <constraint firstItem="TR5-3G-bCi" firstAttribute="top" secondItem="SYI-zx-6sl" secondAttribute="bottom" constant="32" id="Dh8-lj-OWC"/>
+                            <constraint firstItem="fZw-tq-fJF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e9y-ue-a3o" secondAttribute="trailing" constant="16" id="GGc-07-yBN"/>
+                            <constraint firstItem="TR5-3G-bCi" firstAttribute="leading" secondItem="fZw-tq-fJF" secondAttribute="leading" constant="16" id="aEi-u2-j4l"/>
+                            <constraint firstItem="fZw-tq-fJF" firstAttribute="trailing" secondItem="TR5-3G-bCi" secondAttribute="trailing" constant="16" id="dKO-qT-hM1"/>
+                            <constraint firstItem="zLc-Hz-CSy" firstAttribute="centerX" secondItem="TEC-3m-0ke" secondAttribute="centerX" id="hzI-PC-d9r"/>
+                            <constraint firstItem="fZw-tq-fJF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zLc-Hz-CSy" secondAttribute="trailing" constant="64" id="ich-D1-3bZ"/>
+                            <constraint firstItem="SYI-zx-6sl" firstAttribute="top" secondItem="zLc-Hz-CSy" secondAttribute="bottom" constant="48" id="o1I-Ex-2jE"/>
+                            <constraint firstItem="e9y-ue-a3o" firstAttribute="leading" secondItem="fZw-tq-fJF" secondAttribute="leading" constant="16" id="tP3-bS-Q04"/>
+                            <constraint firstItem="e9y-ue-a3o" firstAttribute="top" secondItem="fZw-tq-fJF" secondAttribute="top" id="ugX-CS-bN9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fZw-tq-fJF"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="c6x-Az-a9y"/>
+                    <connections>
+                        <outlet property="backButton" destination="e9y-ue-a3o" id="80V-0v-aEe"/>
+                        <outlet property="footerTextView" destination="TR5-3G-bCi" id="zdu-oR-W3j"/>
+                        <outlet property="logoImageView" destination="zLc-Hz-CSy" id="wbd-3O-g4h"/>
+                        <outlet property="resultTextView" destination="XeE-04-7K9" id="tCt-dm-AZA"/>
+                        <outlet property="titleLabel" destination="FoK-Cr-8Wu" id="ZwS-9W-aVz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nPu-S1-Y4d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Pbd-Tt-lBE" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="850.72463768115949" y="120.53571428571428"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="human" width="135" height="153"/>
+        <image name="paws" width="563" height="150"/>
+        <image name="pawsona" width="135" height="147"/>
+        <namedColor name="background">
+            <color red="1" green="0.87058823529411766" blue="0.51764705882352946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="error">
+            <color red="0.89411764705882357" green="0.2196078431372549" blue="0.52549019607843139" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="primaryLabel">
+            <color red="0.23921568627450981" green="0.27058823529411763" blue="0.53725490196078429" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="secondaryLabel">
+            <color red="0.35686274509803922" green="0.38823529411764707" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

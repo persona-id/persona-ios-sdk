@@ -1,0 +1,8 @@
+platform :ios, '11.0'
+
+target 'DemoApp' do
+  use_frameworks!
+
+  pod 'PersonaInquirySDK', '1.0.0'
+
+end

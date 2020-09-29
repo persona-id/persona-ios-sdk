@@ -1,0 +1,14 @@
+included:
+  - DemoApp
+excluded:
+  - Pods
+
+analyzer_rules:
+  - unused_import
+
+disabled_rules:
+  - nesting
+  - line_length
+  - todo
+  - let_var_whitespace
+  - discouraged_object_literal
