@@ -26,9 +26,21 @@ git clone https://github.com/persona-id/persona-ios-sdk.git
 
 2. Using the Terminal, navigate to the folder where the repository was cloned, and then go into the `DemoApp` folder.
 
-3. Install the dependencies by entering `pod install`
+```
+cd DemoApp
+```
 
-4. Open the newly created workspace by entering `xed .`
+3. Install the dependencies.
+
+```
+pod install --repo-update
+```
+
+4. Open the newly created workspace
+
+```
+xed .
+```
 
 5. Enter your template ID in `WelcomeViewController.swift` on line 23 as the value for `personaInquiryTemplateId`
 
