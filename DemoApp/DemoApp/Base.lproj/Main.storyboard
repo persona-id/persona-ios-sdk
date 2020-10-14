@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GQ1-Ct-Rlk">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -42,16 +42,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paws" translatesAutoresizingMaskIntoConstraints="NO" id="cDn-Fb-dqf" userLabel="Logo">
-                                <rect key="frame" x="64" y="76" width="286" height="150"/>
+                                <rect key="frame" x="64" y="76" width="286" height="100"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="d57-tU-nQo"/>
+                                    <constraint firstAttribute="height" constant="100" id="OG0-YR-3LL"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="350" id="ZBd-eb-vNo"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="H2b-y9-J8d" userLabel="Content Stack">
-                                <rect key="frame" x="32" y="305" width="350" height="286.5"/>
+                                <rect key="frame" x="32" y="304.33333333333326" width="350" height="287.66666666666674"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXS-By-5ah">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="56"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalCompressionResistancePriority="1000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXS-By-5ah">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="57"/>
                                         <string key="text">Time to verify your identity!
 Chose your use case:</string>
                                         <fontDescription key="fontDescription" name="LondrinaSolid-Regular" family="Londrina Solid" pointSize="24"/>
@@ -59,20 +60,20 @@ Chose your use case:</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tgX-mI-imN">
-                                        <rect key="frame" x="0.0" y="88" width="350" height="198.5"/>
+                                        <rect key="frame" x="0.0" y="88.999999999999986" width="350" height="198.66666666666663"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UbC-Nw-Wa8" userLabel="Human Vertical Stack">
-                                                <rect key="frame" x="0.0" y="0.0" width="167" height="198.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="167" height="198.66666666666666"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpo-ci-LoY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="153"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="152.66666666666666"/>
                                                         <state key="normal" image="human"/>
                                                         <connections>
                                                             <action selector="humanButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Gz-ns-yMC"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Human" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HD6-7z-KFo">
-                                                        <rect key="frame" x="0.0" y="161" width="167" height="37.5"/>
+                                                        <rect key="frame" x="0.0" y="160.66666666666669" width="167" height="38"/>
                                                         <fontDescription key="fontDescription" name="LondrinaSolid-Regular" family="Londrina Solid" pointSize="32"/>
                                                         <color key="textColor" name="secondaryLabel"/>
                                                         <nil key="highlightedColor"/>
@@ -80,17 +81,17 @@ Chose your use case:</string>
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CkF-WQ-dup" userLabel="Pawsona Vertical Stack">
-                                                <rect key="frame" x="183" y="0.0" width="167" height="198.5"/>
+                                                <rect key="frame" x="183" y="0.0" width="167" height="198.66666666666666"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0x-KK-m1y">
-                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="153"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="152.66666666666666"/>
                                                         <state key="normal" image="pawsona"/>
                                                         <connections>
                                                             <action selector="pawsonaButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KWm-bL-gYJ"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pawsona" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ie-lx-6AP">
-                                                        <rect key="frame" x="0.0" y="161" width="167" height="37.5"/>
+                                                        <rect key="frame" x="0.0" y="160.66666666666669" width="167" height="38"/>
                                                         <fontDescription key="fontDescription" name="LondrinaSolid-Regular" family="Londrina Solid" pointSize="32"/>
                                                         <color key="textColor" name="secondaryLabel"/>
                                                         <nil key="highlightedColor"/>
@@ -126,7 +127,6 @@ Any similarities with real life are purely coincidental.</string>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="cDn-Fb-dqf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7yM-5v-bE6"/>
-                            <constraint firstItem="Hhs-7i-bcJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2b-y9-J8d" secondAttribute="bottom" constant="16" id="8Ca-u9-nvz"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="H2b-y9-J8d" secondAttribute="trailing" constant="32" id="Hat-84-4Lm"/>
                             <constraint firstItem="cDn-Fb-dqf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="Hge-gc-xLP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Hhs-7i-bcJ" secondAttribute="trailing" constant="16" id="J2L-gz-KDl"/>
@@ -134,8 +134,9 @@ Any similarities with real life are purely coincidental.</string>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cDn-Fb-dqf" secondAttribute="trailing" constant="64" id="cBQ-kK-LMJ"/>
                             <constraint firstItem="Hhs-7i-bcJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="eXN-mf-BDY"/>
                             <constraint firstItem="H2b-y9-J8d" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="eZT-BK-Hnr"/>
-                            <constraint firstItem="H2b-y9-J8d" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cDn-Fb-dqf" secondAttribute="bottom" constant="64" id="mKi-f6-Vff"/>
+                            <constraint firstItem="H2b-y9-J8d" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cDn-Fb-dqf" secondAttribute="bottom" constant="8" id="mKi-f6-Vff"/>
                             <constraint firstItem="cDn-Fb-dqf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="32" id="nU6-Gb-TP1"/>
+                            <constraint firstItem="Hhs-7i-bcJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2b-y9-J8d" secondAttribute="bottom" constant="8" id="xCZ-t9-iel"/>
                             <constraint firstItem="H2b-y9-J8d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="zFb-JG-63o"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -165,14 +166,8 @@ Any similarities with real life are purely coincidental.</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paws" translatesAutoresizingMaskIntoConstraints="NO" id="zLc-Hz-CSy" userLabel="Logo">
-                                <rect key="frame" x="64" y="76" width="286" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="300" id="nsf-db-nRr"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9y-ue-a3o">
-                                <rect key="frame" x="16" y="44" width="88" height="50"/>
+                                <rect key="frame" x="16" y="44" width="60" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="tAC-Hu-sYq"/>
                                 </constraints>
@@ -184,17 +179,27 @@ Any similarities with real life are purely coincidental.</string>
                                     <segue destination="Pbd-Tt-lBE" kind="unwind" unwindAction="unwindToStart:" id="4wA-pN-79y"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="64" translatesAutoresizingMaskIntoConstraints="NO" id="SYI-zx-6sl">
-                                <rect key="frame" x="32" y="274" width="350" height="474"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paws" translatesAutoresizingMaskIntoConstraints="NO" id="zLc-Hz-CSy" userLabel="Logo">
+                                <rect key="frame" x="64" y="94" width="286" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="350" id="9wY-Wd-9yF"/>
+                                    <constraint firstAttribute="height" constant="100" id="EAc-h2-ssR"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SYI-zx-6sl">
+                                <rect key="frame" x="32" y="202" width="350" height="587"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoK-Cr-8Wu">
-                                        <rect key="frame" x="0.0" y="0.0" width="350" height="28"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Result" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoK-Cr-8Wu">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="Dzx-WX-lB4"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="LondrinaSolid-Regular" family="Londrina Solid" pointSize="24"/>
                                         <color key="textColor" name="primaryLabel"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeE-04-7K9">
-                                        <rect key="frame" x="0.0" y="92" width="350" height="382"/>
+                                        <rect key="frame" x="0.0" y="46" width="350" height="541"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <color key="textColor" name="secondaryLabel"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
@@ -203,11 +208,11 @@ Any similarities with real life are purely coincidental.</string>
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="TR5-3G-bCi">
-                                <rect key="frame" x="16" y="780" width="382" height="100"/>
+                                <rect key="frame" x="16" y="805" width="382" height="75"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="secondaryLabel"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="100" id="7Pa-Em-WQT"/>
+                                    <constraint firstAttribute="height" constant="75" id="7Pa-Em-WQT"/>
                                 </constraints>
                                 <string key="text">Paws is a ficticious app made by the folks at Persona, to showcase the mobile SDK capabilities. 
 Any similarities with real life are purely coincidental.</string>
@@ -222,20 +227,20 @@ Any similarities with real life are purely coincidental.</string>
                         </subviews>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
+                            <constraint firstItem="fZw-tq-fJF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zLc-Hz-CSy" secondAttribute="trailing" constant="64" id="17C-hT-EJs"/>
+                            <constraint firstItem="zLc-Hz-CSy" firstAttribute="centerX" secondItem="TEC-3m-0ke" secondAttribute="centerX" id="1HC-uE-sSC"/>
                             <constraint firstItem="SYI-zx-6sl" firstAttribute="leading" secondItem="fZw-tq-fJF" secondAttribute="leading" constant="32" id="1hk-p6-vnT"/>
                             <constraint firstItem="fZw-tq-fJF" firstAttribute="trailing" secondItem="SYI-zx-6sl" secondAttribute="trailing" constant="32" id="2hn-cp-5dv"/>
-                            <constraint firstAttribute="bottom" secondItem="TR5-3G-bCi" secondAttribute="bottom" constant="16" id="778-PK-uYE"/>
-                            <constraint firstItem="zLc-Hz-CSy" firstAttribute="top" secondItem="fZw-tq-fJF" secondAttribute="top" constant="32" id="BLM-ST-7fy"/>
-                            <constraint firstItem="zLc-Hz-CSy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fZw-tq-fJF" secondAttribute="leading" constant="64" id="COT-fw-Lp1"/>
-                            <constraint firstItem="TR5-3G-bCi" firstAttribute="top" secondItem="SYI-zx-6sl" secondAttribute="bottom" constant="32" id="Dh8-lj-OWC"/>
                             <constraint firstItem="fZw-tq-fJF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="e9y-ue-a3o" secondAttribute="trailing" constant="16" id="GGc-07-yBN"/>
-                            <constraint firstItem="TR5-3G-bCi" firstAttribute="leading" secondItem="fZw-tq-fJF" secondAttribute="leading" constant="16" id="aEi-u2-j4l"/>
-                            <constraint firstItem="fZw-tq-fJF" firstAttribute="trailing" secondItem="TR5-3G-bCi" secondAttribute="trailing" constant="16" id="dKO-qT-hM1"/>
-                            <constraint firstItem="zLc-Hz-CSy" firstAttribute="centerX" secondItem="TEC-3m-0ke" secondAttribute="centerX" id="hzI-PC-d9r"/>
-                            <constraint firstItem="fZw-tq-fJF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zLc-Hz-CSy" secondAttribute="trailing" constant="64" id="ich-D1-3bZ"/>
-                            <constraint firstItem="SYI-zx-6sl" firstAttribute="top" secondItem="zLc-Hz-CSy" secondAttribute="bottom" constant="48" id="o1I-Ex-2jE"/>
+                            <constraint firstItem="fZw-tq-fJF" firstAttribute="trailing" secondItem="TR5-3G-bCi" secondAttribute="trailing" constant="16" id="MeD-H4-Hp2"/>
+                            <constraint firstItem="SYI-zx-6sl" firstAttribute="bottom" secondItem="TR5-3G-bCi" secondAttribute="top" constant="-16" id="MwY-wI-FYM"/>
+                            <constraint firstItem="zLc-Hz-CSy" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="fZw-tq-fJF" secondAttribute="leading" constant="64" id="TGZ-CD-BFd"/>
+                            <constraint firstItem="SYI-zx-6sl" firstAttribute="top" secondItem="zLc-Hz-CSy" secondAttribute="bottom" constant="8" id="hlH-Tx-We8"/>
+                            <constraint firstItem="zLc-Hz-CSy" firstAttribute="top" secondItem="e9y-ue-a3o" secondAttribute="bottom" id="iW7-Ai-ex8"/>
+                            <constraint firstAttribute="bottom" secondItem="TR5-3G-bCi" secondAttribute="bottom" constant="16" id="ixy-zm-1Xi"/>
                             <constraint firstItem="e9y-ue-a3o" firstAttribute="leading" secondItem="fZw-tq-fJF" secondAttribute="leading" constant="16" id="tP3-bS-Q04"/>
                             <constraint firstItem="e9y-ue-a3o" firstAttribute="top" secondItem="fZw-tq-fJF" secondAttribute="top" id="ugX-CS-bN9"/>
+                            <constraint firstItem="TR5-3G-bCi" firstAttribute="leading" secondItem="fZw-tq-fJF" secondAttribute="leading" constant="16" id="wkW-QE-6hT"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fZw-tq-fJF"/>
                     </view>

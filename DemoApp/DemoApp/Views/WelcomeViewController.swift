@@ -28,6 +28,9 @@ class WelcomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        humanButton.imageView?.contentMode = .scaleAspectFit
+        pawsonaButton.imageView?.contentMode = .scaleAspectFit
+
         // Add the attributed footer text
         footerTextView.attributedText = NSAttributedString.personaFooterText
     }
