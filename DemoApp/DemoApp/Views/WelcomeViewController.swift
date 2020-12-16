@@ -5,7 +5,7 @@
 //  Created by Paulo Fierro on 9/24/20.
 //
 
-import Persona
+import InquiryAnywhere
 import UIKit
 
 /// The start view
