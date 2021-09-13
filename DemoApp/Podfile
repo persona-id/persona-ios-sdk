@@ -3,6 +3,6 @@ platform :ios, '11.0'
 target 'DemoApp' do
   use_frameworks!
 
-  pod 'PersonaInquirySDK', '1.1.0'
+  pod 'PersonaInquirySDK', '1.1.18'
 
 end

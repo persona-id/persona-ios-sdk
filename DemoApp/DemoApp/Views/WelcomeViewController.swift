@@ -19,8 +19,9 @@ class WelcomeViewController: UIViewController {
     @IBOutlet private weak var pawsonaLabel: UILabel!
     @IBOutlet private weak var footerTextView: UITextView!
 
-    // Please see the README that explains how to get this template ID
-    private let personaInquiryTemplateId = ""
+    // TODO: Set to your Inquiry Template ID string here!
+    // Please see the README that explains how to get this Inquiry Template ID
+    private let personaInquiryTemplateId: String // = "tmpl_example"
 
     // The identifier to the Storyboard segue
     private let showInquirySegueIdentifier = "showInquiry"
