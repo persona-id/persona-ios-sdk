@@ -15,9 +15,9 @@ struct InquiryResultsViewModel {
     private(set) var resultText = NSAttributedString()
 
     /// The inquiry was completed
-    init(success: Bool, inquiryId: String, attributes: Attributes, relationships: Relationships) {
-        self.title = success ? "Inquiry succeeded!" : "Inquiry failed."
-        self.resultText = convertResult(inquiryId: inquiryId, attributes: attributes, relationships: relationships)
+    init(inquiryId: String, status: String, fields: [String: InquiryField]) {
+        self.title = "Inquiry completed!"
+        self.resultText = convertResult(inquiryId: inquiryId, status: status, fields: fields)
     }
 
     /// The inquiry was cancelled
@@ -63,13 +63,17 @@ private extension InquiryResultsViewModel {
     }
 
     /// Converts an inquiry result into an attributed string to display in a text view
-    func convertResult(inquiryId: String, attributes: Attributes, relationships: Relationships) -> NSAttributedString {
+    func convertResult(inquiryId: String, status: String, fields: [String: InquiryField]) -> NSAttributedString {
         let text = NSMutableAttributedString()
         text.append(addRow(label: "INQUIRY ID", value: inquiryId))
-        text.append(addRow(label: "NAME", value: extractName(from: attributes.name)))
-        text.append(addRow(label: "ADDRESS", value: extractAddress(from: attributes.address)))
-        text.append(addRow(label: "DATE OF BIRTH", value: extractBirthdate(from: attributes.birthdate)))
-        text.append(addRow(label: "VERIFICATION STATUS", value: extractStatuses(from: relationships)))
+        text.append(addRow(label: "STATUS", value: status))
+        text.append(NSAttributedString(string: "FIELDS:\n", attributes: labelAttributes))
+
+        for (key, field) in fields {
+            if let row = fieldToString(label: key, field: field) {
+                text.append(row)
+            }
+        }
         return text
     }
 
@@ -80,79 +84,43 @@ private extension InquiryResultsViewModel {
         return text
     }
 
-    /// Extracts a name to display from a Name
-    func extractName(from name: Name?) -> String {
-        guard let name = name else {
-            return "-"
-        }
-        if name.first == nil, name.middle == nil, name.last == nil {
-            return "-"
-        }
-
-        var text = ""
-        if let first = name.first {
-            text += first + " "
-        }
-        if let middle = name.middle {
-            text += middle + " "
-        }
-        if let last = name.last {
-            text += last
-        }
-        return text
-    }
-
-    /// Extracts an address to display from an Address
-    func extractAddress(from address: Address?) -> String {
-        guard let address = address else {
-            return "-"
-        }
-        var text = ""
-        if let street1 = address.street1, !street1.isEmpty {
-            text += street1 + "\n"
-        }
-        if let street2 = address.street2, !street2.isEmpty {
-            text += street2 + "\n"
-        }
-        if let city = address.city, !city.isEmpty {
-            text += city + ", "
-        }
-        if let subdivision = address.subdivision, !subdivision.isEmpty {
-            text += subdivision + " "
-        }
-        if let postalCode = address.postalCode, !postalCode.isEmpty {
-            text += postalCode
-        }
-        if let countryCode = address.countryCode, !countryCode.isEmpty {
-            if !text.isEmpty {
-                text += "\n"
+    /// Extracts field value if exists and returns styled in an attributed string
+    func fieldToString(label: String, field: InquiryField) -> NSAttributedString? {
+        // if field has a value, format to an attributed string
+        let fieldString: String? = {
+            switch field {
+            case .string(let value):
+                if let value = value {
+                    return value
+                }
+            case .int(let value):
+                if let value = value {
+                    return "\(value)"
+                }
+            case .float(let value):
+                if let value = value {
+                    return "\(value)"
+                }
+            case .bool(let value):
+                if let value = value {
+                    return "\(value)"
+                }
+            case .date(let value), .datetime(let value):
+                if let value = value {
+                    return "\(value)"
+                }
+            case .unknown:
+                return nil
+            @unknown default:
+                return nil
             }
-            text += countryCode
-        }
+            return nil
+        }()
+        // no field value found, return nil
+        guard let fieldString = fieldString else { return nil }
+
+        let text = NSMutableAttributedString(string: "  \(label):\n", attributes: labelAttributes)
+        text.append(NSMutableAttributedString(string: "  \(fieldString)\n\n", attributes: valueAttributes))
         return text
-    }
-
-    /// Returns the verification ID and status for each verification that was performed
-    func extractStatuses(from relationships: Relationships) -> String {
-        guard !relationships.verifications.isEmpty else {
-            return "-"
-        }
-
-        return relationships.verifications
-            .map {
-                "\($0.id) - \($0.status)\n"
-            }
-            .joined(separator: ",")
-    }
-
-    /// Returns a formatted birthdate
-    func extractBirthdate(from date: Date?) -> String {
-        guard let date = date else {
-            return "-"
-        }
-
-        let formatter = DateFormatter()
-        formatter.dateStyle = .long
-        return formatter.string(from: date)
     }
 }

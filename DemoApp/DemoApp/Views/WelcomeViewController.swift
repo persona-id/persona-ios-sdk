@@ -21,7 +21,7 @@ class WelcomeViewController: UIViewController {
 
     // TODO: Set to your Inquiry Template ID string here!
     // Please see the README that explains how to get this Inquiry Template ID
-    private let personaInquiryTemplateId: String // = "tmpl_example"
+    private let personaInquiryTemplateId: String // = "itmpl_example"
 
     // The identifier to the Storyboard segue
     private let showInquirySegueIdentifier = "showInquiry"
@@ -69,32 +69,17 @@ extension WelcomeViewController: InquiryDelegate {
         ).start(from: self)
     }
 
-    /// Called on a successful inquiry.
-    func inquirySuccess(inquiryId: String, attributes: Attributes, relationships: Relationships) {
-        showResults(with:
-            InquiryResultsViewModel(
-                success: true,
-                inquiryId: inquiryId,
-                attributes: attributes,
-                relationships: relationships
-            )
-        )
-    }
-
-    /// Called when the invidual fails the inquiry.
-    func inquiryFailed(inquiryId: String, attributes: Attributes, relationships: Relationships) {
-        showResults(with:
-            InquiryResultsViewModel(
-                success: false,
-                inquiryId: inquiryId,
-                attributes: attributes,
-                relationships: relationships
-            )
-        )
+    /// Called when inquiry has finished.
+    func inquiryComplete(inquiryId: String, status: String, fields: [String: InquiryField]) {
+        showResults(with: InquiryResultsViewModel(
+            inquiryId: inquiryId,
+            status: status,
+            fields: fields
+        ))
     }
 
     /// Called when the individual cancels the inquiry.
-    func inquiryCancelled() {
+    func inquiryCanceled(inquiryId: String?, sessionToken: String?) {
         showResults(with: InquiryResultsViewModel())
     }
 
