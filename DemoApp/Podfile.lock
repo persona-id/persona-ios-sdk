@@ -1,16 +1,16 @@
 PODS:
-  - PersonaInquirySDK (2.0.1)
+  - PersonaInquirySDK (2.1.2)
 
 DEPENDENCIES:
-  - PersonaInquirySDK (= 2.0.1)
+  - PersonaInquirySDK (~> 2.1.2)
 
 SPEC REPOS:
-  trunk:
+  https://cdn.cocoapods.org/:
     - PersonaInquirySDK
 
 SPEC CHECKSUMS:
-  PersonaInquirySDK: ffcdab3bc6babc80d57d593f8085c42927329903
+  PersonaInquirySDK: cd36afeb17ccd32666af1c6e3b93b7c7af1382e9
 
-PODFILE CHECKSUM: 12df60c48af972760c354d345a4b1435aaf34d32
+PODFILE CHECKSUM: 4a58203016b41846b86156b30d73a4af9927f97e
 
-COCOAPODS: 1.11.0
+COCOAPODS: 1.11.2
