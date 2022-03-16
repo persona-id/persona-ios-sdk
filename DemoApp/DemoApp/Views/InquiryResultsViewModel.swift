@@ -5,7 +5,7 @@
 //  Created by Paulo Fierro on 9/29/20.
 //
 
-import Persona
+import Persona2
 import UIKit
 
 /// Contains the title and result text to display in InquiryViewController.
