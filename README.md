@@ -10,7 +10,7 @@ The only requirements to get up and running are:
 
 ## Locate your Template ID
 
-1. Login to the Persona Dashboard and go to the [Development section](https://withpersona.com/dashboard/development).
+1. Login to the Persona Dashboard and go to the [Integration section](https://app.withpersona.com/dashboard/integration).
 
 2. Select the Template you want to use from the drop-down and copy the Template ID for later.
 
