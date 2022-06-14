@@ -49,3 +49,11 @@ xed .
 # Documentation
 
 If you'd like the more information, please [check out the documentation](https://docs.withpersona.com/docs/native-mobile-sdks) or if you have questions, feel free to contact support@withpersona.com.
+
+# Privacy Configuration
+
+This SDK collects a user’s [IDFV](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor) for fraud prevention purposes. In [App Store Connect](https://appstoreconnect.apple.com/) > Your App > App Privacy, if you haven’t already add in a “Device Identifier,” and fill out the questionnaire with the following answers:  
+
+- **Usage**: App Functionality (covers fraud prevention)
+- **Are the device IDs collected from this app linked to the user’s identity?** Yes
+- **Do you or your third-party partners use device IDs for tracking purposes?** No
