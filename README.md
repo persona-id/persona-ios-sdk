@@ -46,6 +46,9 @@ xed .
 
 6. Run the project and test it out!
 
+# Optional
+If you'd like to test the passport nfc tag reading flow, add the Near Field Communication Tag Reading capability to DemoApp. This can be added in the Signing & Capabilities tab in the DemoApp target. You will also need to add the Near Field Communication Tag Reading capability to the provisioning profile you are using to run the demo app.
+
 # Documentation
 
 If you'd like the more information, please [check out the documentation](https://docs.withpersona.com/docs/native-mobile-sdks) or if you have questions, feel free to contact support@withpersona.com.
