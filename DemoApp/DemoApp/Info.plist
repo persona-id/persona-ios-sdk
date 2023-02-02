@@ -2,10 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Pawsona requires permission to access your photo library.</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Pawsona requires permission to use your camera.</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -24,6 +20,12 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NFCReaderUsageDescription</key>
+	<string>Needed for Nfc</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Pawsona requires permission to use your camera.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Pawsona requires permission to access your photo library.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>Rubik-Regular.ttf</string>
@@ -51,6 +53,12 @@
 		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
+	</array>
+	<key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
+	<array>
+		<string>00000000000000</string>
+		<string>A0000002472001</string>
+		<string>A0000002471001</string>
 	</array>
 </dict>
 </plist>

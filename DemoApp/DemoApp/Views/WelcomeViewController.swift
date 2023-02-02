@@ -6,6 +6,7 @@
 //
 
 import Persona2
+import PersonaNfc
 import UIKit
 
 /// The start view
@@ -63,7 +64,8 @@ extension WelcomeViewController: InquiryDelegate {
             config: InquiryConfiguration(
                 templateId: personaInquiryTemplateId,
                 environment: .sandbox,
-                theme: theme
+                theme: theme,
+                nfcAdapter: PersonaNfcAdapter()
             ),
             delegate: self
         ).start(from: self)
