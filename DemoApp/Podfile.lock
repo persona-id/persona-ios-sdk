@@ -1,16 +1,24 @@
 PODS:
-  - PersonaInquirySDK2 (2.3.9)
+  - OpenSSL-Universal (1.1.180)
+  - PersonaInquirySDK2 (2.5.11)
+  - PersonaNfc (2.5.11)
 
 DEPENDENCIES:
-  - PersonaInquirySDK2 (~> 2.3.9)
+  - OpenSSL-Universal (= 1.1.180)
+  - PersonaInquirySDK2 (~> 2.5.9)
+  - PersonaNfc (~> 2.5.9)
 
 SPEC REPOS:
   trunk:
+    - OpenSSL-Universal
     - PersonaInquirySDK2
+    - PersonaNfc
 
 SPEC CHECKSUMS:
-  PersonaInquirySDK2: 8153173c5f6d4e964874c9f0d7b375652c9bb6f9
+  OpenSSL-Universal: 1aa4f6a6ee7256b83db99ec1ccdaa80d10f9af9b
+  PersonaInquirySDK2: f9daa62b1f394bf78e73d6a8db9ec670890926cb
+  PersonaNfc: 4f56e2f1fe42d4c5189ee6dbbac18116f70b4f6e
 
-PODFILE CHECKSUM: b5b3e242572883ae321df42ce1e94a4854b705c2
+PODFILE CHECKSUM: 50ec62aaeb3add872e73a411b625c74c0cfb44a4
 
-COCOAPODS: 1.11.0
+COCOAPODS: 1.11.3
