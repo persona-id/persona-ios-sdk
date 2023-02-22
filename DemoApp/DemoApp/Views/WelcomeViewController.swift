@@ -58,7 +58,7 @@ extension WelcomeViewController {
 extension WelcomeViewController: InquiryDelegate {
 
     /// Starts the Inquiry
-    private func startInquiry(theme: InquiryTheme? = nil) {
+    private func startInquiry(theme: InquiryTheme? = InquiryTheme(themeSource: .server)) {
         // Start the Inquiry
         Inquiry(
             config: InquiryConfiguration(
@@ -148,7 +148,9 @@ extension WelcomeViewController {
                 fatalError("Could not create custom colors.")
         }
 
-        var theme = InquiryTheme()
+        // Note that using themeSource: .client is deprecated (in a production build, you would use .server instead).
+        // This is just an example to show what can be configured on an arbitrary template inside of the dashboard.
+        var theme = InquiryTheme(themeSource: .client)
         theme.backgroundColor = backgroundColor
         theme.textFieldBorderColor = darkLabelColor
         theme.buttonBackgroundColor = primaryLabelColor
