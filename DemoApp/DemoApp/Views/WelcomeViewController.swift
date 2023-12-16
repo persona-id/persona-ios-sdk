@@ -7,6 +7,7 @@
 
 import Persona2
 import PersonaNfc
+import PersonaWebRtc
 import UIKit
 
 /// The start view
@@ -60,15 +61,23 @@ extension WelcomeViewController: InquiryDelegate {
     /// Starts the Inquiry
     private func startInquiry(theme: InquiryTheme? = InquiryTheme(themeSource: .server)) {
         // Start the Inquiry
-        Inquiry(
-            config: InquiryConfiguration(
-                templateId: personaInquiryTemplateId,
-                environment: .sandbox,
-                theme: theme,
-                nfcAdapter: PersonaNfcAdapter()
-            ),
-            delegate: self
-        ).start(from: self)
+        if personaInquiryTemplateId.starts(with: "itmplv_") {
+            Inquiry.from(templateVersion: personaInquiryTemplateId, delegate: self)
+                .environment(.sandbox)
+                .theme(theme)
+                .nfcAdapter(PersonaNfcAdapter())
+                .webRtcAdapter(PersonaWebRtcAdapter())
+                .build()
+                .start(from: self)
+        } else {
+            Inquiry.from(templateId: personaInquiryTemplateId, delegate: self)
+                .environment(.sandbox)
+                .theme(theme)
+                .nfcAdapter(PersonaNfcAdapter())
+                .webRtcAdapter(PersonaWebRtcAdapter())
+                .build()
+                .start(from: self)
+        }
     }
 
     /// Called when inquiry has finished.
