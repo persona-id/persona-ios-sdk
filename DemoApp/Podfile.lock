@@ -1,15 +1,15 @@
 PODS:
   - OpenSSL-Universal (1.1.180)
-  - PersonaInquirySDK2 (2.14.1)
-  - PersonaNfc (2.14.1)
-  - PersonaWebRtc (2.14.1)
+  - PersonaInquirySDK2 (2.15.1)
+  - PersonaNfc (2.15.1)
+  - PersonaWebRtc (2.15.1)
   - WebRTC-lib (111.0.0)
 
 DEPENDENCIES:
   - OpenSSL-Universal (= 1.1.180)
-  - PersonaInquirySDK2 (~> 2.14.1)
-  - PersonaNfc (~> 2.14.1)
-  - PersonaWebRtc (~> 2.14.1)
+  - PersonaInquirySDK2 (~> 2.15.1)
+  - PersonaNfc (~> 2.15.1)
+  - PersonaWebRtc (~> 2.15.1)
   - WebRTC-lib (= 111.0.0)
 
 SPEC REPOS:
@@ -22,11 +22,11 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   OpenSSL-Universal: 1aa4f6a6ee7256b83db99ec1ccdaa80d10f9af9b
-  PersonaInquirySDK2: c28dc32c8a972d0d68abe68fd8cf6056b558a66f
-  PersonaNfc: 9ee0740b049ca8c027da802a140ca5418f232e90
-  PersonaWebRtc: 5321235221f794749213a37016ec2d0b43276e54
+  PersonaInquirySDK2: 76fdb4be09c4e8d1355165db210fc5788765ec76
+  PersonaNfc: 6f316772faf4f28904a6a5d4a8f5fc5e7af91066
+  PersonaWebRtc: d4cd2ec0f298fefefb6cc7106a386031d1d69539
   WebRTC-lib: 7e7f08b0062e5610599a73c0c232ed22662c0bf1
 
-PODFILE CHECKSUM: 684e632f03693889ce65e41ee0e3107a5f108a20
+PODFILE CHECKSUM: 6c5fab927b51e315c83fde6ac967b0b47beeaa65
 
-COCOAPODS: 1.14.2
+COCOAPODS: 1.14.3

@@ -3,9 +3,9 @@ platform :ios, '13.0'
 target 'DemoApp' do
   use_frameworks!
 
-  pod 'PersonaInquirySDK2', '~>2.14.1'
-  pod 'PersonaNfc', '~>2.14.1'
-  pod 'PersonaWebRtc', '~>2.14.1'
+  pod 'PersonaInquirySDK2', '~>2.15.1'
+  pod 'PersonaNfc', '~>2.15.1'
+  pod 'PersonaWebRtc', '~>2.15.1'
   pod 'OpenSSL-Universal', '=1.1.180'
   pod 'WebRTC-lib', '=111.0.0'
 
