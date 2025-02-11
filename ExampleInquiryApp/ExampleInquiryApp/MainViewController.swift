@@ -27,6 +27,9 @@ final class MainViewController: UIViewController {
         return button
     }()
 
+    private var currentInquiry: Inquiry?
+    private var shouldCancelInquiryOnBack = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,14 +54,17 @@ final class MainViewController: UIViewController {
 extension MainViewController: InquiryDelegate {
     func inquiryComplete(inquiryId: String, status: String, fields: [String : Persona2.InquiryField]) {
         navigationController?.setViewControllers([self, CompletedViewController()], animated: true)
+        currentInquiry = nil
     }
     
     func inquiryCanceled(inquiryId: String?, sessionToken: String?) {
         navigationController?.popToViewController(self, animated: true)
+        currentInquiry = nil
     }
     
     func inquiryError(_ error: any Error) {
         navigationController?.popToViewController(self, animated: true)
+        currentInquiry = nil
     }
 }
 
@@ -70,8 +76,9 @@ extension MainViewController: PersonaInlineDelegate {
             print("Could not find persona inline view controller")
             return
         }
-        personaInlineViewController.navigationItem.leftBarButtonItem?.isEnabled = navigationState.backButtonEnabled
-        // use `navigationState.cancelButtonEnabled` if you want users to be able to dismiss the inquiry
+
+        shouldCancelInquiryOnBack = navigationState.backButtonEnabled == false && navigationState.cancelButtonEnabled
+        personaInlineViewController.navigationItem.leftBarButtonItem?.isEnabled = navigationState.backButtonEnabled || shouldCancelInquiryOnBack
     }
 }
 
@@ -81,12 +88,12 @@ extension MainViewController {
 
     @objc
     private func startInquiryTapped() {
-        let inquiry = Inquiry
+        currentInquiry = Inquiry
             .from(templateId: inquiryTemplateToken, delegate: self)
             .environment(.sandbox) // Note: for testing purposes only, change to production for live flows
             .build()
 
-        guard let personaInlineViewController = inquiry.startInline() else {
+        guard let personaInlineViewController = currentInquiry?.startInline() else {
             print("Error, this can happen when startInline is called more than once on a given inquiry instance")
             return
         }
@@ -110,11 +117,19 @@ extension MainViewController {
 
     @objc
     private func backButtonTapped() {
-        guard let personaInlineViewController = navigationController?.topViewController as? PersonaInlineViewController else {
-            print("Could not find persona inline view controller")
+        guard let personaInlineViewController = navigationController?.topViewController as? PersonaInlineViewController,
+            let currentInquiry
+        else {
+            print("Could not find persona inline view controller or current inquiry")
             return
         }
-        personaInlineViewController.navigateBack()
+
+        guard shouldCancelInquiryOnBack else {
+            personaInlineViewController.navigateBack()
+            return
+        }
+
+        currentInquiry.cancel()
     }
 
     @objc
