@@ -70,7 +70,7 @@ extension MainViewController: PersonaInlineDelegate {
             print("Could not find persona inline view controller")
             return
         }
-        personaInlineViewController.navigationItem.backBarButtonItem?.isEnabled = navigationState.backButtonEnabled
+        personaInlineViewController.navigationItem.leftBarButtonItem?.isEnabled = navigationState.backButtonEnabled
         // use `navigationState.cancelButtonEnabled` if you want users to be able to dismiss the inquiry
     }
 }
@@ -78,17 +78,6 @@ extension MainViewController: PersonaInlineDelegate {
 // MARK: - Private
 
 extension MainViewController {
-
-    @objc
-    private func helpButtonTapped() {
-        let alert = UIAlertController(
-            title: "Example",
-            message: "This alert is controlled by the app not the persona sdk!",
-            preferredStyle: .alert
-        )
-        alert.addAction(UIAlertAction(title: "Cool", style: .default))
-        navigationController?.present(alert, animated: true)
-    }
 
     @objc
     private func startInquiryTapped() {
@@ -103,21 +92,39 @@ extension MainViewController {
         }
 
         personaInlineViewController.navigationItem.title = "Identity Verification"
+        personaInlineViewController.navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: UIImage(systemName: "chevron.backward"),
+            style: .plain,
+            target: self,
+            action: #selector(backButtonTapped)
+        )
         personaInlineViewController.navigationItem.rightBarButtonItem = UIBarButtonItem(
             image: UIImage(systemName: "questionmark.circle"),
             style: .plain,
             target: self,
             action: #selector(helpButtonTapped)
         )
-        personaInlineViewController.navigationItem.backAction = UIAction { _ in
-            // cancel the inquiry to ensure sdk reports to server that user canceled
-            // this is important to understand dropoff metrics
-            inquiry.cancel()
-
-            // we will clean up the navigation stack in the `inquiryCanceled` callback
-        }
-
         personaInlineViewController.delegate = self
         navigationController?.pushViewController(personaInlineViewController, animated: true)
+    }
+
+    @objc
+    private func backButtonTapped() {
+        guard let personaInlineViewController = navigationController?.topViewController as? PersonaInlineViewController else {
+            print("Could not find persona inline view controller")
+            return
+        }
+        personaInlineViewController.navigateBack()
+    }
+
+    @objc
+    private func helpButtonTapped() {
+        let alert = UIAlertController(
+            title: "Example",
+            message: "This alert is controlled by the app not the persona sdk!",
+            preferredStyle: .alert
+        )
+        alert.addAction(UIAlertAction(title: "Cool", style: .default))
+        navigationController?.present(alert, animated: true)
     }
 }
