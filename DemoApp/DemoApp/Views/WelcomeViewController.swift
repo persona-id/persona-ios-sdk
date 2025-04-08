@@ -17,13 +17,11 @@ class WelcomeViewController: UIViewController {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var humanButton: UIButton!
     @IBOutlet private weak var humanLabel: UILabel!
-    @IBOutlet private weak var pawsonaButton: UIButton!
-    @IBOutlet private weak var pawsonaLabel: UILabel!
     @IBOutlet private weak var footerTextView: UITextView!
 
     // TODO: Set to your Inquiry Template ID string here!
     // Please see the README that explains how to get this Inquiry Template ID
-    private let personaInquiryTemplateId: String // = "itmpl_example"
+    private let personaInquiryTemplateId: String = "" // = "itmpl_example"
 
     // The identifier to the Storyboard segue
     private let showInquirySegueIdentifier = "showInquiry"
@@ -32,7 +30,6 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
 
         humanButton.imageView?.contentMode = .scaleAspectFit
-        pawsonaButton.imageView?.contentMode = .scaleAspectFit
 
         // Add the attributed footer text
         footerTextView.attributedText = NSAttributedString.personaFooterText
@@ -46,11 +43,6 @@ extension WelcomeViewController {
     /// Handles taps on the Human. Starts an Inquiry.
     @IBAction private func humanButtonTapped(_ sender: Any) {
         startInquiry()
-    }
-
-    /// Handles taps on the Pawsona. Starts an Inquiry with a custom theme.
-    @IBAction private func pawsonaButtonTapped(_ sender: Any) {
-        startInquiry(theme: createPawsonaTheme())
     }
 }
 
@@ -137,60 +129,5 @@ extension WelcomeViewController: UITextViewDelegate {
                   interaction: UITextItemInteraction) -> Bool {
         UIApplication.shared.open(URL, options: [:], completionHandler: nil)
         return false
-    }
-}
-
-// MARK: - Helper Methods
-
-extension WelcomeViewController {
-
-    /// Creates a theme for the Pawsona use case
-    private func createPawsonaTheme() -> InquiryTheme {
-        guard let backgroundColor = UIColor(personaColor: .background),
-            let alternateBackgroundColor = UIColor(personaColor: .alternateBackground),
-            let errorColor = UIColor(personaColor: .error),
-            let darkLabelColor = UIColor(personaColor: .darkLabel),
-            let primaryLabelColor = UIColor(personaColor: .primaryLabel),
-            let secondaryLabelColor = UIColor(personaColor: .secondaryLabel),
-            let rubikFont = UIFont(personaFont: .rubik, size: 17),
-            let londrinaFont = UIFont(personaFont: .londrina, size: 17) else {
-                fatalError("Could not create custom colors.")
-        }
-
-        // Note that using themeSource: .client is deprecated (in a production build, you would use .server instead).
-        // This is just an example to show what can be configured on an arbitrary template inside of the dashboard.
-        var theme = InquiryTheme(themeSource: .client)
-        theme.backgroundColor = backgroundColor
-        theme.textFieldBorderColor = darkLabelColor
-        theme.buttonBackgroundColor = primaryLabelColor
-        theme.buttonTouchedBackgroundColor = errorColor
-        theme.buttonDisabledBackgroundColor = primaryLabelColor.withAlphaComponent(0.25)
-        theme.closeButtonTintColor = darkLabelColor
-        theme.cancelButtonBackgroundColor = primaryLabelColor
-        theme.selectedCellBackgroundColor = alternateBackgroundColor.withAlphaComponent(0.25)
-        theme.accentColor = alternateBackgroundColor
-        theme.darkPrimaryColor = darkLabelColor
-        theme.primaryColor = alternateBackgroundColor
-        theme.titleTextColor = darkLabelColor
-        theme.bodyTextColor = primaryLabelColor
-        theme.formLabelTextColor = secondaryLabelColor
-        theme.buttonTextColor = .white
-        theme.pickerTextColor = primaryLabelColor
-        theme.textFieldTextColor = primaryLabelColor
-        theme.footnoteTextColor = primaryLabelColor
-
-        theme.textFieldCornerRadius = 16
-        theme.buttonCornerRadius = 16
-
-        theme.titleTextFont = londrinaFont.withSize(36)
-        theme.cardTitleTextFont = londrinaFont.withSize(20)
-        theme.bodyTextFont = londrinaFont.withSize(24)
-        theme.footnoteTextFont = rubikFont.withSize(14)
-        theme.formLabelTextFont = rubikFont.withSize(16)
-        theme.textFieldFont = rubikFont.withSize(16)
-        theme.textFieldPlaceholderFont = rubikFont.withSize(16)
-        theme.pickerTextFont = rubikFont.withSize(18)
-        theme.buttonFont = rubikFont.withSize(18)
-        return theme
     }
 }

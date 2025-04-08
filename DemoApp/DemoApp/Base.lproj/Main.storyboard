@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GQ1-Ct-Rlk">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23727" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="GQ1-Ct-Rlk">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23721"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -22,7 +23,7 @@
             <objects>
                 <navigationController id="GQ1-Ct-Rlk" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" hidden="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0BO-Yh-TBD">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="88" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -42,7 +43,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paws" translatesAutoresizingMaskIntoConstraints="NO" id="cDn-Fb-dqf" userLabel="Logo">
-                                <rect key="frame" x="64" y="76" width="286" height="100"/>
+                                <rect key="frame" x="64" y="120" width="286" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="OG0-YR-3LL"/>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="350" id="ZBd-eb-vNo"/>
@@ -63,35 +64,17 @@ Chose your use case:</string>
                                         <rect key="frame" x="0.0" y="88.999999999999986" width="350" height="198.66666666666663"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="UbC-Nw-Wa8" userLabel="Human Vertical Stack">
-                                                <rect key="frame" x="0.0" y="0.0" width="167" height="198.66666666666666"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="198.66666666666666"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qpo-ci-LoY">
-                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="152.66666666666666"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="152.66666666666666"/>
                                                         <state key="normal" image="human"/>
                                                         <connections>
                                                             <action selector="humanButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7Gz-ns-yMC"/>
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Human" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HD6-7z-KFo">
-                                                        <rect key="frame" x="0.0" y="160.66666666666669" width="167" height="38"/>
-                                                        <fontDescription key="fontDescription" name="LondrinaSolid-Regular" family="Londrina Solid" pointSize="32"/>
-                                                        <color key="textColor" name="secondaryLabel"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                            </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CkF-WQ-dup" userLabel="Pawsona Vertical Stack">
-                                                <rect key="frame" x="183" y="0.0" width="167" height="198.66666666666666"/>
-                                                <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C0x-KK-m1y">
-                                                        <rect key="frame" x="0.0" y="0.0" width="167" height="152.66666666666666"/>
-                                                        <state key="normal" image="pawsona"/>
-                                                        <connections>
-                                                            <action selector="pawsonaButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KWm-bL-gYJ"/>
-                                                        </connections>
-                                                    </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pawsona" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ie-lx-6AP">
-                                                        <rect key="frame" x="0.0" y="160.66666666666669" width="167" height="38"/>
+                                                        <rect key="frame" x="0.0" y="160.66666666666669" width="350" height="38"/>
                                                         <fontDescription key="fontDescription" name="LondrinaSolid-Regular" family="Londrina Solid" pointSize="32"/>
                                                         <color key="textColor" name="secondaryLabel"/>
                                                         <nil key="highlightedColor"/>
@@ -99,15 +82,11 @@ Chose your use case:</string>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
-                                        <constraints>
-                                            <constraint firstItem="C0x-KK-m1y" firstAttribute="width" secondItem="qpo-ci-LoY" secondAttribute="width" id="LS5-cl-QuZ"/>
-                                            <constraint firstItem="C0x-KK-m1y" firstAttribute="height" secondItem="qpo-ci-LoY" secondAttribute="height" id="O5r-Ok-xNe"/>
-                                        </constraints>
                                     </stackView>
                                 </subviews>
                             </stackView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Hhs-7i-bcJ">
-                                <rect key="frame" x="16" y="778" width="382" height="100"/>
+                                <rect key="frame" x="16" y="744" width="382" height="100"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" name="secondaryLabel"/>
                                 <constraints>
@@ -124,6 +103,7 @@ Any similarities with real life are purely coincidental.</string>
                                 </connections>
                             </textView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="cDn-Fb-dqf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7yM-5v-bE6"/>
@@ -139,7 +119,6 @@ Any similarities with real life are purely coincidental.</string>
                             <constraint firstItem="Hhs-7i-bcJ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="H2b-y9-J8d" secondAttribute="bottom" constant="8" id="xCZ-t9-iel"/>
                             <constraint firstItem="H2b-y9-J8d" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="zFb-JG-63o"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="CKF-Ba-eM1"/>
                     <nil key="simulatedTopBarMetrics"/>
@@ -148,8 +127,6 @@ Any similarities with real life are purely coincidental.</string>
                         <outlet property="humanButton" destination="qpo-ci-LoY" id="qW6-nA-eTd"/>
                         <outlet property="humanLabel" destination="HD6-7z-KFo" id="K55-4a-7xN"/>
                         <outlet property="logoImageView" destination="cDn-Fb-dqf" id="7JM-gc-4Zb"/>
-                        <outlet property="pawsonaButton" destination="C0x-KK-m1y" id="Yss-wx-bPf"/>
-                        <outlet property="pawsonaLabel" destination="2Ie-lx-6AP" id="brc-MC-JiN"/>
                         <outlet property="titleLabel" destination="FXS-By-5ah" id="7W5-hP-byt"/>
                         <segue destination="1FI-AF-Qsw" kind="show" identifier="showInquiry" id="9FD-Xj-BYA"/>
                     </connections>
@@ -166,8 +143,8 @@ Any similarities with real life are purely coincidental.</string>
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9y-ue-a3o">
-                                <rect key="frame" x="16" y="44" width="60" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e9y-ue-a3o">
+                                <rect key="frame" x="16" y="88" width="60" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="tAC-Hu-sYq"/>
                                 </constraints>
@@ -180,14 +157,14 @@ Any similarities with real life are purely coincidental.</string>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="paws" translatesAutoresizingMaskIntoConstraints="NO" id="zLc-Hz-CSy" userLabel="Logo">
-                                <rect key="frame" x="64" y="94" width="286" height="100"/>
+                                <rect key="frame" x="64" y="138" width="286" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="350" id="9wY-Wd-9yF"/>
                                     <constraint firstAttribute="height" constant="100" id="EAc-h2-ssR"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="SYI-zx-6sl">
-                                <rect key="frame" x="32" y="202" width="350" height="587"/>
+                                <rect key="frame" x="32" y="246" width="350" height="543"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Result" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FoK-Cr-8Wu">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="30"/>
@@ -199,8 +176,8 @@ Any similarities with real life are purely coincidental.</string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeE-04-7K9">
-                                        <rect key="frame" x="0.0" y="46" width="350" height="541"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <rect key="frame" x="0.0" y="46" width="350" height="497"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" name="secondaryLabel"/>
                                         <fontDescription key="fontDescription" name="Rubik-Regular" family="Rubik" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -225,6 +202,7 @@ Any similarities with real life are purely coincidental.</string>
                                 </connections>
                             </textView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="fZw-tq-fJF"/>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
                             <constraint firstItem="fZw-tq-fJF" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="zLc-Hz-CSy" secondAttribute="trailing" constant="64" id="17C-hT-EJs"/>
@@ -242,7 +220,6 @@ Any similarities with real life are purely coincidental.</string>
                             <constraint firstItem="e9y-ue-a3o" firstAttribute="top" secondItem="fZw-tq-fJF" secondAttribute="top" id="ugX-CS-bN9"/>
                             <constraint firstItem="TR5-3G-bCi" firstAttribute="leading" secondItem="fZw-tq-fJF" secondAttribute="leading" constant="16" id="wkW-QE-6hT"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="fZw-tq-fJF"/>
                     </view>
                     <navigationItem key="navigationItem" id="c6x-Az-a9y"/>
                     <connections>
@@ -262,7 +239,6 @@ Any similarities with real life are purely coincidental.</string>
     <resources>
         <image name="human" width="135" height="153"/>
         <image name="paws" width="563" height="150"/>
-        <image name="pawsona" width="135" height="147"/>
         <namedColor name="background">
             <color red="1" green="0.87058823529411766" blue="0.51764705882352946" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -275,5 +251,8 @@ Any similarities with real life are purely coincidental.</string>
         <namedColor name="secondaryLabel">
             <color red="0.35686274509803922" green="0.38823529411764707" blue="0.67843137254901964" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>
