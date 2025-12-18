@@ -1,4 +1,4 @@
-# Demo Apps for Persona iOS Inquiry SDK
+# Demo Apps for Persona's iOS Inquiry SDK
 
 If you haven't already, [sign up for a free Persona account](https://withpersona.com/dashboard/signup) which comes with Sandbox access.
 
