@@ -1,62 +1,13 @@
-# Persona Inquiry SDK iOS Demo App
+# Demo Apps for Persona's iOS Inquiry SDK
 
 If you haven't already, [sign up for a free Persona account](https://withpersona.com/dashboard/signup) which comes with Sandbox access.
 
-## Requirements
+## Contents
 
-The only requirements to get up and running are:
-- [Xcode 11 or later](https://developer.apple.com/xcode)
-- [Cocoapods](https://cocoapods.org) for installing the dependencies
+This repo contains apps that correspond to the [two ways to integrate Persona with the SDK](https://docs.withpersona.com/2025-10-27/choosing-an-integration-method#mobile-sdk):
+* [DemoAppWithInquiryTemplate](./DemoAppWithInquiryTemplate/): A demo app that generates inquiries from an inquiry template.
+* [DemoAppWithPrecreatedInquiries](./DemoAppWithPrecreatedInquiries/): A demo app that renders inquiries that you pre-create on your server. Includes a demo backend. See the [corresponding tutorial](https://docs.withpersona.com/2025-10-27/tutorial-ios-sdk-precreate) for this demo.
 
-## Locate your Template ID
+## Documentation
 
-1. Login to the Persona Dashboard and go to the [Integration section](https://app.withpersona.com/dashboard/integration).
-
-2. Select the Template you want to use from the drop-down and copy the Template ID for later.
-
-## Configure this project
-
-1. Clone this repository.
-
-```
-git clone git@github.com:persona-id/persona-ios-sdk.git
-# or
-git clone https://github.com/persona-id/persona-ios-sdk.git
-```
-
-2. Using the Terminal, navigate to the folder where the repository was cloned, and then go into the `DemoApp` folder.
-
-```
-cd DemoApp
-```
-
-3. Install the dependencies.
-
-```
-pod install --repo-update
-```
-
-4. Open the newly created workspace
-
-```
-xed .
-```
-
-5. Enter your template ID in `WelcomeViewController.swift` on line 23 as the value for `personaInquiryTemplateId`
-
-6. Run the project and test it out!
-
-# Optional
-If you'd like to test the passport nfc tag reading flow, add the Near Field Communication Tag Reading capability to DemoApp. This can be added in the Signing & Capabilities tab in the DemoApp target. You will also need to add the Near Field Communication Tag Reading capability to the provisioning profile you are using to run the demo app.
-
-# Documentation
-
-If you'd like the more information, please [check out the documentation](https://docs.withpersona.com/docs/native-mobile-sdks) or if you have questions, feel free to contact support@withpersona.com.
-
-# Privacy Configuration
-
-This SDK collects a user’s [IDFV](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor) for fraud prevention purposes. In [App Store Connect](https://appstoreconnect.apple.com/) > Your App > App Privacy, if you haven’t already add in a “Device Identifier,” and fill out the questionnaire with the following answers:  
-
-- **Usage**: App Functionality (covers fraud prevention)
-- **Are the device IDs collected from this app linked to the user’s identity?** Yes
-- **Do you or your third-party partners use device IDs for tracking purposes?** No
+[Check out the documentation](https://docs.withpersona.com/docs/native-mobile-sdks) for the mobile SDKs. If you have questions, feel free to contact support@withpersona.com.
