@@ -1,12 +1,12 @@
-# Persona Inquiry SDK iOS Demo Apps
+# Demo Apps for Persona iOS Inquiry SDK
 
 If you haven't already, [sign up for a free Persona account](https://withpersona.com/dashboard/signup) which comes with Sandbox access.
 
 ## Contents
 
-This repo contains the following demo apps:
-* [DemoAppWithInquiryTemplate](./DemoAppWithInquiryTemplate/): Shows how to use the Persona iOS SDK with an inquiry template ID.
-* [DemoAppWithPrecreatedInquiries](./DemoAppWithPrecreatedInquiries/): Shows how to use the Persona iOS SDK with inquiries that you pre-create on your server. See the [corresponding tutorial](https://docs.withpersona.com/2025-10-27/tutorial-ios-sdk-precreate) for this demo app.
+This repo contains apps that correspond to the [two ways to integrate Persona with the SDK](https://docs.withpersona.com/2025-10-27/choosing-an-integration-method#mobile-sdk):
+* [DemoAppWithInquiryTemplate](./DemoAppWithInquiryTemplate/): A demo app that generates inquiries from an inquiry template.
+* [DemoAppWithPrecreatedInquiries](./DemoAppWithPrecreatedInquiries/): A demo app that renders inquiries that you pre-create on your server. Includes a demo backend. See the [corresponding tutorial](https://docs.withpersona.com/2025-10-27/tutorial-ios-sdk-precreate) for this demo.
 
 ## Documentation
 
