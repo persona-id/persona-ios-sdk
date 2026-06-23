@@ -1,0 +1,14 @@
+# SwiftLint configuration for the Persona iOS SDK example app.
+# Optional: install via `brew install swiftlint`, then run `swiftlint` from the
+# repo root. Not required to build the project.
+
+included:
+  - PersonaExample/PersonaExample
+
+disabled_rules:
+  - todo                # The template intentionally ships with a "set me" placeholder.
+  - trailing_comma      # Trailing commas are kept for cleaner diffs.
+
+line_length:
+  warning: 120
+  ignores_comments: true
