@@ -1,62 +1,144 @@
-# Persona Inquiry SDK iOS Demo App
+# Persona iOS SDK Example
 
-If you haven't already, [sign up for a free Persona account](https://withpersona.com/dashboard/signup) which comes with Sandbox access.
+A small, focused example app that shows how to integrate the
+[Persona Inquiry SDK](https://docs.withpersona.com/docs/ios-sdk-v2-integration-guide)
+into an iOS app **two ways** — once with **SwiftUI** and once with **UIKit** —
+so you can copy whichever fits your codebase.
+
+Both paths launch the same identity-verification flow and render results
+through one shared screen, so the only meaningful difference is how each
+framework starts an inquiry.
+
+| | SwiftUI | UIKit |
+|---|---|---|
+| Entry point | [`SwiftUIInquiryView`](PersonaExample/PersonaExample/SwiftUIExample/SwiftUIInquiryView.swift) | [`UIKitInquiryViewController`](PersonaExample/PersonaExample/UIKitExample/UIKitInquiryViewController.swift) |
+| How it launches | `.personaInquiry(isPresented:inquiryTemplate:…)` view modifier | `Inquiry.from(templateId:delegate:).build().start(from:)` |
+| How results arrive | `onResult:` closure → `PersonaResult` | `InquiryDelegate` callbacks |
 
 ## Requirements
 
-The only requirements to get up and running are:
-- [Xcode 11 or later](https://developer.apple.com/xcode)
-- [Cocoapods](https://cocoapods.org) for installing the dependencies
+- **Xcode 16 or later** (the project uses file-system–synchronized groups)
+- **iOS 16 or later** deployment target
+- A **Persona account** — [sign up for free](https://withpersona.com/dashboard/signup); it includes Sandbox access
 
-## Locate your Template ID
+The SDK is added via **Swift Package Manager** and resolves automatically when
+you open the project — there is nothing to install.
 
-1. Login to the Persona Dashboard and go to the [Integration section](https://app.withpersona.com/dashboard/integration).
+## Quick start
 
-2. Select the Template you want to use from the drop-down and copy the Template ID for later.
+1. **Clone and open:**
 
-## Configure this project
+   ```sh
+   git clone https://github.com/persona-id/persona-ios-sdk.git
+   cd persona-ios-sdk
+   open PersonaExample/PersonaExample.xcodeproj
+   ```
 
-1. Clone this repository.
+   Xcode will fetch the Persona SDK package on first open.
+
+2. **Add your Inquiry Template ID.** Open
+   [`PersonaConfiguration.swift`](PersonaExample/PersonaExample/Configuration/PersonaConfiguration.swift)
+   and replace the placeholder:
+
+   ```swift
+   static let templateID = "itmpl_YourTemplateIdHere"
+   ```
+
+   Find your template ID in the Persona Dashboard under
+   [Integration](https://app.withpersona.com/dashboard/integration) — it looks
+   like `itmpl_XXXXXXXXXXXXXXXXX`. Until you set it, the "Start verification"
+   buttons stay disabled and the app shows a hint.
+
+3. **Run** on a simulator or device, and pick either the SwiftUI or the UIKit
+   example from the home screen.
+
+## How it's organized
 
 ```
-git clone git@github.com:persona-id/persona-ios-sdk.git
-# or
-git clone https://github.com/persona-id/persona-ios-sdk.git
+PersonaExample/PersonaExample/
+├── App/PersonaExampleApp.swift          # @main SwiftUI entry point
+├── Configuration/PersonaConfiguration.swift  # ← set your template ID here
+├── Home/HomeView.swift                  # Picker linking to both examples
+├── SwiftUIExample/
+│   └── SwiftUIInquiryView.swift         # SwiftUI integration (.personaInquiry)
+├── UIKitExample/
+│   ├── UIKitInquiryViewController.swift # UIKit integration (Inquiry builder)
+│   └── UIKitInquiryView.swift           # Bridges the UIKit VC into SwiftUI
+└── Shared/
+    ├── InquiryOutcome.swift             # Result model used by both examples
+    ├── InquiryResultView.swift          # Shared result screen
+    └── ConfigurationHint.swift          # "Set your template ID" notice
 ```
 
-2. Using the Terminal, navigate to the folder where the repository was cloned, and then go into the `DemoApp` folder.
+## The two integrations
 
+### SwiftUI
+
+Attach the `.personaInquiry` modifier and toggle an `isPresented` binding:
+
+```swift
+.personaInquiry(
+    isPresented: $isPresentingInquiry,
+    inquiryTemplate: PersonaConfiguration.templateID,
+    builder: { $0.environment(.sandbox) },
+    onResult: { result in
+        switch result {
+        case let .complete(data): // data.inquiryId, data.status, data.fields
+        case .canceled:           // dismissed before finishing
+        case let .errored(error): // PersonaError
+        @unknown default:         break
+        }
+    }
+)
 ```
-cd DemoApp
+
+### UIKit
+
+Build an inquiry and start it from a view controller that implements
+`InquiryDelegate`:
+
+```swift
+Inquiry.from(templateId: PersonaConfiguration.templateID, delegate: self)
+    .environment(.sandbox)
+    .build()
+    .start(from: self)
+
+// MARK: InquiryDelegate
+func inquiryComplete(inquiryId: String, status: String, fields: [String: InquiryField]) { … }
+func inquiryCanceled(inquiryId: String?, sessionToken: String?) { … }
+func inquiryError(_ error: PersonaError) { … }
 ```
 
-3. Install the dependencies.
+## Permissions
 
-```
-pod install --repo-update
-```
+The verification flow uses the camera, and may use the microphone, photo
+library, location, and NFC depending on your template. The required
+`Info.plist` usage-description strings are already set in
+[`Info.plist`](PersonaExample/PersonaExample/Info.plist). Adjust the copy to
+match your app before shipping.
 
-4. Open the newly created workspace
+To enable **NFC passport / eID reading**, add the *Near Field Communication Tag
+Reading* capability to the target (Signing & Capabilities) and to your
+provisioning profile.
 
-```
-xed .
-```
+## Privacy configuration
 
-5. Enter your template ID in `WelcomeViewController.swift` on line 23 as the value for `personaInquiryTemplateId`
+The SDK collects a user's
+[IDFV](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor)
+for fraud prevention. In
+[App Store Connect](https://appstoreconnect.apple.com/) → your app → App
+Privacy, add a **Device ID** and answer:
 
-6. Run the project and test it out!
+- **Usage:** App Functionality (covers fraud prevention)
+- **Linked to the user's identity?** Yes
+- **Used for tracking?** No
 
-# Optional
-If you'd like to test the passport nfc tag reading flow, add the Near Field Communication Tag Reading capability to DemoApp. This can be added in the Signing & Capabilities tab in the DemoApp target. You will also need to add the Near Field Communication Tag Reading capability to the provisioning profile you are using to run the demo app.
+## Documentation & support
 
-# Documentation
+- [iOS Integration Guide](https://docs.withpersona.com/docs/ios-sdk-v2-integration-guide)
+- [iOS Changelog](https://docs.withpersona.com/ios-sdk-v2-changelog)
+- Questions? Email [support@withpersona.com](mailto:support@withpersona.com)
 
-If you'd like the more information, please [check out the documentation](https://docs.withpersona.com/docs/native-mobile-sdks) or if you have questions, feel free to contact support@withpersona.com.
+---
 
-# Privacy Configuration
-
-This SDK collects a user’s [IDFV](https://developer.apple.com/documentation/uikit/uidevice/1620059-identifierforvendor) for fraud prevention purposes. In [App Store Connect](https://appstoreconnect.apple.com/) > Your App > App Privacy, if you haven’t already add in a “Device Identifier,” and fill out the questionnaire with the following answers:  
-
-- **Usage**: App Functionality (covers fraud prevention)
-- **Are the device IDs collected from this app linked to the user’s identity?** Yes
-- **Do you or your third-party partners use device IDs for tracking purposes?** No
+Working in this repo with an AI assistant? See [AGENTS.md](AGENTS.md).

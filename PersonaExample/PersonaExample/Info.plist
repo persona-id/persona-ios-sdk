@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<!-- Required: the camera captures government IDs and selfies. -->
+	<key>NSCameraUsageDescription</key>
+	<string>Used to capture your photo and identity documents during verification.</string>
+	<!-- Used by video-based selfie verification. -->
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Used during video-based identity verification.</string>
+	<!-- Used when uploading an existing photo of an identity document. -->
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Used to upload a photo of your identity document.</string>
+	<!-- Used by some verification flows for fraud signals. -->
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Used to help verify your identity and prevent fraud.</string>
+	<!-- Used to read NFC-enabled passports and identity documents. -->
+	<key>NFCReaderUsageDescription</key>
+	<string>Used to read NFC-enabled identity documents.</string>
+	<!-- Application IDs read during passport / eID NFC scanning. -->
+	<key>com.apple.developer.nfc.readersession.iso7816.select-identifiers</key>
+	<array>
+		<string>A0000002471001</string>
+		<string>A0000002472001</string>
+		<string>00000000000000</string>
+	</array>
+</dict>
+</plist>
